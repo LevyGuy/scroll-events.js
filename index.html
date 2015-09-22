@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Scroll events test</title>
+    <style>
+        .scroll-container {
+            height: 600px;
+            overflow: auto;
+            width: 800px;
+            border: 1px solid #000;
+            margin: auto;
+            position: relative;
+        }
+
+        .placebo-scroll-container-height {
+            height: 6000px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="scroll-container">
+    <div class="placebo-scroll-container-height"></div>
+</div>
+
+<script src="scroll-events.js"></script>
+<script>
+    (function () {
+        "use strict";
+        // Init the scroll listener
+        ScrollElement(".scroll-container").listen({
+            onTopThumbClick: function () {
+                console.log("%cThumb Click Top", "color: green;");
+            },
+            onBottomThumbClick: function () {
+                console.log("%cThumb Click Bottom", "color: purple;");
+            },
+            onTrack: function () {
+                console.log("on Track");
+            },
+            onMouseWheel: function () {
+                console.log("%con Mouse Wheel", "color: blue;");
+            }
+        });
+    }());
+</script>
+</body>
+</html>
