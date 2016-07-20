@@ -22,6 +22,7 @@ ScrollElement(".scroll-container").listen({
 });
 ```
 
+see [jsfiddle](https://jsfiddle.net/GM09D/k36gvjfa/)
 
 License
 ----
